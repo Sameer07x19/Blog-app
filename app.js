@@ -12,6 +12,9 @@ app.get("/", (req,res) => {
 app.post("/compose",(req,res) => {
     res.render("compose.ejs")
 })
+app.post("/myblogs",(req,res) => {
+    res.render("myBlogs.ejs")
+})
 app.listen(port, () => {
     console.log(`Listening at port ${port}`)
 })
