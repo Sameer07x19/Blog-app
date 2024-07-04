@@ -27,6 +27,12 @@ nav {
   font-weight: 600;
   font-size: 22px;
 }
+.logo a{
+  text-decoration: none;
+}
+.logo a:active {
+  color: #7023b7;
+}
 .links a {
   text-decoration: none;
   color: #000;
@@ -74,6 +80,7 @@ footer p {
   padding: 0.8em 1.2em 0.8em 1em;
   transition: all ease-in-out 0.2s;
   font-size: 16px;
+  margin-bottom: 100px;
 }
 .create span {
   display: flex;
@@ -173,4 +180,33 @@ footer p {
 .blog h1{
   margin-bottom: 30px ;
   font-weight: 500;
+
+}
+.center {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.create-new  {
+  /* background-color: #97D0FB; */
+  border: 2px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+  margin-top: 50px;
+}
+.create-new span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+.create-new:hover {
+  background-color: #0071e2;
 }

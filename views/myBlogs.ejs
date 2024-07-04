@@ -15,39 +15,30 @@
   <body>
     <div class="main">
       <%- include("partials/header.ejs") %>
-
+      <form action="/newPost" method="POST">
+        <div class="center">
+          <button class="create-new" type="submit" method="POST">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                ></path></svg>
+                Create
+            </span>
+          </button>
+        </div>
+      </form>
       <div class="blogs">
         <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto recusandae atque iusto eaque blanditiis perferendis deleniti sapiente incidunt. Consequuntur eum maxime aliquid quidem, hic fugit placeat aliquam perspiciatis quaerat eaque.</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita odio aperiam odit dolore amet molestiae exercitationem est quae, repellendus alias quia fugit nihil architecto, officia iusto eligendi harum excepturi non?</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
-        </div>
-        <div class="blog">
-          <h1>Blog 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore, soluta quod reiciendis natus magnam odit pariatur quidem est sit incidunt rem ducimus expedita quas alias voluptatum deleniti earum ut!</p>
+          <h1><%= locals.title %></h1>
+          <p><%= locals.content %></p>
         </div>
       </div>
         
