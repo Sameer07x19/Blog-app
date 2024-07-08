@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -48,6 +49,6 @@ app.post('/delete/:id', (req, res) => {
 app.get("/about", (req, res) => { 
   res.render("about");
 })
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Listening at port ${port}`);
 });
