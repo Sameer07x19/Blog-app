@@ -1,35 +1,35 @@
-import express from 'express'
-import bodyParser from 'body-parser'
+const express = require("express");
+const bodyParser = require("body-parser");
 
+// Creating an express app and setting the port
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static("public"))
+// Middlewares 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
+// Importing the posts module
+const posts = require("./posts.js");
 
+// Routes
+app.get("/", (req, res) => {
+  res.render("home", { posts: posts.getPosts() });
+});
 
+app.get("/newPost", (req, res) => {
+  res.render("newPost");
+});
 
-app.get("/", (req,res) => {
-    res.render("home.ejs")
-})
-
-app.post("/newPost",(req,res) => {
-    res.render("newPost.ejs")
-})
-
-app.post("/myblogs",(req,res) => {
-    var title = req.body.title;
-    var content = req.body.content;
-    res.render("myBlogs.ejs",{
-        title: title,
-        content: content
-    })
-})
-
-
+app.post("/newPost", (req, res) => {
+  const { title, content } = req.body;
+  posts.addPost(title, content);
+  console.log(req.body);
+  res.redirect("/");
+});
 
 
 app.listen(port, () => {
-    console.log(`Listening at port ${port}`)
-})
+  console.log(`Listening at port ${port}`);
+});
