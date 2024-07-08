@@ -29,7 +29,25 @@ app.post("/newPost", (req, res) => {
   res.redirect("/");
 });
 
+app.get('/edit/:id', (req, res) => {
+  const post = posts.getPost(req.params.id);
+  res.render('edit-post', { post });
+});
 
+app.post('/edit/:id', (req, res) => {
+  const { title, content } = req.body;
+  posts.updatePost(req.params.id, title, content);
+  res.redirect('/');
+});
+
+app.post('/delete/:id', (req, res) => {
+  posts.deletePost(req.params.id);
+  res.redirect('/');
+});
+
+app.get("/about", (req, res) => { 
+  res.render("about");
+})
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);
 });

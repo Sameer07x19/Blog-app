@@ -42,11 +42,20 @@
         </button>
       </div>
       <div class="blogs">
-        <% posts.forEach((posts) => { %>
+        <% posts.forEach((post) => { %>
         <div class="blog">
-          <h1><%= posts.title %></h1>
-          <p><%= posts.content %></p>
+          <div class="main-content">
+            <h1><%= post.title %></h1>
+          <p><%= post.content %></p>
+          </div>
+          <div class="update">
+            <a href="/edit/<%= post.id %>">Edit</a>
+          <form action="/delete/<%= post.id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+          </div>
         </div>
+        
         <% }); %>
       </div>
 
